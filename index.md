@@ -1,4 +1,4 @@
-# Additional material for talks and conference presentations I contributed to
+# Abstracts, posters and slides
 
 ## Posters
 
