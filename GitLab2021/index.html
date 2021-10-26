@@ -2,39 +2,277 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<title>reveal.js</title>
-
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Geisteswissenschaftliche Daten in Gitlab mit Git LFS</title>
+		<meta name="description" content="Presentation">
+		<meta name="author" content="Anne Ferger">
 		<link rel="stylesheet" href="../reveal/dist/reset.css">
 		<link rel="stylesheet" href="../reveal/dist/reveal.css">
-		<link rel="stylesheet" href="../reveal/dist/theme/black.css">
-
+		<link rel="stylesheet" href="../reveal/dist/theme/night.css">
 		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css">
+		<!-- Printing and PDF exports -->
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-background-color="#1e888aff">
+					<h3>Geisteswissenschaftliche Daten in Gitlab mit Git LFS</h3>
+					<h4>Aspekte aus der Praxis</h4>
+					<br />
+					<br />
+					<p>
+						<small>Anne Ferger | Universität Paderborn</small>
+					</p>
+					<p>
+						<small>Slides: <a href="https://anneferger.github.io/GitLab2021/"
+								>anneferger.github.io/GitLab2021</a></small>
+					</p>
+				</section>
+				<section data-background-color="#1e888aff">
+					<section>
+						<p>Im Projekt <a href="https://www.slm.uni-hamburg.de/inel.html">INEL</a>
+							wurden die <b>Versionierung mit git</b> und ein <b>Framework zur
+								Qualitätssicherung</b> mithilfe von GitLab in existierende Workflows
+							zur Datenerstellung integriert. </p>
+					</section>
+				</section>
+				<section data-background-color="#1e888aff">
+					<section>
+						<h4>Geisteswissenschaftlichen Daten und GitLab in der Praxis</h4>
+						<ul>
+							<li>Existierende Workflows der Datenerstellung möglichst unverändert
+								lassen</li>
+							<li>Nutzung von Git während der Datenerstellung mit möglichst wenig
+								(Lern-)Aufwand</li>
+							<li>Git LFS für binäre Daten, die sich dafür auch wirklich eignen</li>
+							<li>Methoden der Qualitätssicherung als GitLab CI</li>
+						</ul>
+						<p>GitLab und Git LFS können die Arbeit and Forschungsdaten vereinfachen und
+							nachhaltiger machen</p>
+					</section>
+				</section>
+				<section data-background-color="#1e888aff">
+					<section>
+						<h3>Workflows der Datenerstellung</h3>
+					</section>
+					<section>
+						<h4>Datenerstellung</h4>
+						<ul>
+							<li>linguistische Transkriptionen, Annotationen und und Übersetzungen
+								von Dolgan, Kamas, Evenki und Selkup im Projekt <a
+									href="https://www.slm.uni-hamburg.de/inel.html">INEL</a></li>
+							<li>weiterführende Informationen zum Projekt <ul>
+									<li><a href="https://inel.corpora.uni-hamburg.de/portal/geo/"
+											>Karte</a> der Erhebungsorte</li>
+									<li><a href="https://www.slm.uni-hamburg.de/inel/kontakt.html"
+											>Kontakt</a></li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Datenerstellung</h4>
+						<ul>
+							<li>Erstellung linguistischer Korpora teilweise manuell, teilweise
+								automatisch unterstützt (mit den Programmen <a
+									href="https://archive.mpi.nl/tla/elan">ELAN</a>, <a
+									href="https://software.sil.org/fieldworks/">FLEx</a> und <a
+									href="https://exmaralda.org/en/">EXMARaLDA</a>)</li>
+							<li>Daten bestehen aus Transkriptionsdateien (xml) mit Annotationen und
+								Übersetzungen, Metadaten (xml) und Audiodateien oder Manuskripten
+								(binäre Dateien)</li>
+							<li>Git und GitLab zur Versionskontrolle und kollaborativem
+								Arbeiten</li>
+						</ul>
+					</section>
+				</section>
+				<section data-background-color="#1e888aff">
+					<section>
+						<h3>Nutzung von GitLab und Git LFS</h3>
+					</section>
+					<section>
+						<h3>Hürden</h3>
+						<ul>
+							<li>steile Lernkurve bei der Nutzung von Git</li>
+							<li>Unterbrechung der existierenden Workflows</li>
+							<li>große binäre Dateien (Audio und Manuskripte), die aufgrund der
+								verwendeten Software an bestimmten lokalen Pfaden liegen müssen</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Überwindung der Hürden</h3>
+						<ul>
+							<li>Nutzung eines vereinfachten Gitskripts (statt z.B. GitGUI): <a
+									href="https://github.com/digitalhumanists/lama">Lama</a></li>
+							<li>Integration von Qualitätskontrolle in Gitworkflow</li>
+							<li>Erstmaliges Setup von Git und Gitskript (inklusive GitLFS) ist nur
+								einmalig nötig</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Git LFS</h3>
+						<!-- TODO -->
+						<ul>
+							<li>
+								<a href="https://git-lfs.github.com/">Git Large File Storage</a>
+							</li>
+							<li>Welche Daten können gut mit Git LFS versioniert werden?</li>
+							<ul>
+								<li>Die binären Daten (z.B. PDF, WAV, MP3) werden zu Beginn erhoben
+									und eventuell verändert, bleiben aber danach konstant</li>
+								<li>Es ist schon zu Beginn des Projekts relativ klar, welche binären
+									Dateien hinzugefügt werden und welche Dateiendungen sie haben
+									(.gitattributes)</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h3>Git LFS</h3>
+						<!-- TODO -->
+						<ul>
+							<li>Welche Daten können gut mit Git LFS versioniert werden?</li>
+							<ul>
+								<li>Es werden regelmäßig neue Daten hinzugefügt, die dann wieder
+									lange nicht verändert werden</li>
+								<li>Die Daten müssen zwingend an einem bestimmten Ort auf dem
+									lokalen Rechner liegen, damit z.B. verwendete
+									Transkriptionssoftware funktioniert</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h3>Git LFS</h3>
+						<!-- TODO -->
+						<ul>
+							<li>Nutzung von GitLFS in GitLab</li>
+							<li>Zu Beginn des Projekts war an der Universität Hamburg noch kein
+								GitLab verfügbar, deshalb wurden nach dem Wechsel die Vorteile von
+								GitLFS und GitLab für die geisteswissenschaftlichen Daten
+								sichtbar</li>
+							<li>Das Hosten der Daten auf GitLab und mit Git LFS bietet Vorteile bei
+								der Publikation der Daten und ist nachhaltiger als die bisherige
+								Lösung</li>
+						</ul>
+					</section>
+				<!--	<section>
+						<h3>Übersicht</h3>
+						<img data-src="images/CuboCurationflows.png" height="441" width="713" />
+					</section> -->
+				</section>
+				<section data-background-color="#1e888aff">
+					<section>
+						<h3>(Kontinuierliche) Qualitätskontrolle</h3>
+					</section>
+					<section>
+						<h4>Datenqualität bei (teilweise) manuell erstellten Daten</h4>
+						<ul>
+							<li>wissenschaftlich robust für statistische Auswertungen, Suchen
+								etc.</li>
+							<li>manuelle Bearbeitung führt zu technischen Inkonsistenzen</li>
+							<li>Transkriptionen, Übersetzungen, Annotationen and Metadaten beziehen
+								sich aufeinander und können so automatisch gecheckt werden</li>
+						</ul>
+						<p>➔ Checks und Fixes für Inkonsistenzen</p>
+					</section>
+					<section>
+						<h3>Integration in existierende Workflows</h3>
+						<ul>
+							<li>Checks und Fixes wurden zu open source framework <a
+									href="https://doi.org/10.5281/zenodo.4725655">corpus
+									services</a> hinzugefügt </li>
+							<li>Checks (und Fixes) wurden als CI Skript in GitLab hinzugefügt: <a
+									href="https://git.uni-paderborn.de/aferger/dolgan">Beispiel
+									Dolgan</a>
+							</li>
+							<li>vergleiche <a href="https://conquaire.uni-bielefeld.de/">Conquaire
+									Projekt</a> (Hermann et al. 2021)</li>
+						</ul>
+					</section>
+				</section>
+				<section data-background-color="#1e888aff">
+					<section>
+						<h3>Weitere Informationen und Tools:</h3>
+						<ul>
+							<li>Vereinfachte git Lösung: <a
+									href="https://github.com/digitalhumanists/lama">Lama</a></li>
+							<li>Qualitätschecks und automatische Fixes für linguistische Korpora: <a
+									href="https://github.com/digitalhumanists/corpus-services"
+									>corpus services</a></li>
+							<li>Automatic git solution for corpus services: <a
+									href="https://github.com/digitalhumanists/corpus-services/tree/develop/cubo"
+									>cubo</a></li>
+						</ul>
+					</section>
+				</section>
+				<section data-background-color="#1e888aff">
+					<h3>Korpus Daten</h3>
+					<small>
+						<p>Brykina, Maria; Orlova, Svetlana; Wagner-Nagy, Beáta. 2020. INEL Selkup
+							Corpus. Version 1.0. Publication date 2020-06-30. Archived in Hamburger
+							Zentrum für Sprachkorpora. <a
+								href="http://hdl.handle.net/11022/0000-0007-E1D5-A"
+								>http://hdl.handle.net/11022/0000-0007-E1D5-A</a>. In: Wagner-Nagy,
+							Beáta; Arkhipov, Alexandre; Ferger, Anne; Jettka, Daniel; Lehmberg, Timm
+							(eds.). The INEL corpora of indigenous Northern Eurasian languages. </p>
+						<p>Däbritz, Chris Lasse; Kudryakova, Nina; Stapert, Eugénie. 2019. "INEL
+							Dolgan Corpus." Version 1.0. Publication date 2019-08-31. <a
+								href="http://hdl.handle.net/11022/0000-0007-CAE7-1"
+								>http://hdl.handle.net/11022/0000-0007-CAE7-1</a>. Archived in
+							Hamburger Zentrum für Sprachkorpora. In: Wagner-Nagy, Beáta; Arkhipov,
+							Alexandre; Ferger, Anne; Jettka, Daniel; Lehmberg, Timm (eds.). The INEL
+							corpora of indigenous Northern Eurasian languages. </p>
+						<p>Gusev, Valentin; Klooster, Tiina; Wagner-Nagy, Beáta. 2019. "INEL Kamas
+							Corpus." Version 1.0. Publication date 2019-12-15. <a
+								href="http://hdl.handle.net/11022/0000-0007-DA6E-9"
+								>http://hdl.handle.net/11022/0000-0007-DA6E-9</a>. Archived in
+							Hamburger Zentrum für Sprachkorpora. In: Wagner-Nagy, Beáta; Arkhipov,
+							Alexandre; Ferger, Anne; Jettka, Daniel; Lehmberg, Timm (eds.). The INEL
+							corpora of indigenous Northern Eurasian languages. </p>
+						<p>Also on <a
+								href="https://gitlab.rrz.uni-hamburg.de/inel-open-access/corpora"
+								>GitLab</a></p>
+					</small>
+				</section>
+				<section data-background-color="#1e888aff">
+					<h3>Quellen</h3>
+					<small>
+						<p>Hermann, Fabian / Pietsch, Christian / Cimiano, Philipp (2021):
+							“Conquaire Infrastructure for Continuous Quality Control”, in: Cimiano,
+							Philipp / Pietsch, Christian / Wiljes, Cord (Eds) Studies in Analytical
+							Reproducibility: the Conquaire Project. Bielefeld 17-27. DOI:
+							10.4119/unibi/2942780</p>
+						<p></p>
+					</small>
+				</section>
+				<!-- Contact -->
+				<section data-background-color="#1e888aff">
+					<section>
+						<h3>Contact</h3>
+						<a href="https://anneferger.github.io/">Anne Ferger</a>
+						<a href="mailto:anne.ferger@uni-paderborn.de"
+							>anne.ferger@uni-paderborn.de</a>
+						<a href="https://twitter.com/anneferger1"
+							>https://twitter.com/anneferger1</a>
+					</section>
+				</section>
 			</div>
 		</div>
-
 		<script src="../reveal/dist/reveal.js"></script>
 		<script src="../reveal/plugin/notes/notes.js"></script>
 		<script src="../reveal/plugin/markdown/markdown.js"></script>
 		<script src="../reveal/plugin/highlight/highlight.js"></script>
 		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
-
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                hash: true,
+                slideNumber: true,
+                
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins:[RevealMarkdown, RevealHighlight, RevealNotes]
+            });</script>
 	</body>
 </html>
