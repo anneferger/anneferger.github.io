@@ -24,6 +24,8 @@
 
 * [CLARIN 2021](https://www.clarin.eu/event/2021/clarin-annual-conference-2021-virtual-event): "Seamless Integration of Continuous Quality Control and Research Data Management for Indigenous Language Resources" [Abstract](https://office.clarin.eu/v/CE-2021-1923-CLARIN2021_ConferenceProceedings.pdf) and [Slides](https://digitalhumanists.github.io/CLARIN2021)
 
+* [FDM mit GitLab 2021](https://www.fdm.nrw/index.php/nrw-ag-gitlab/): "Geisteswissenschaftliche Daten in Gitlab mit Git LFS" [Slides](https://anneferger.github.io/GitLab2021/)
+
 ## Papers
 
 * [orcid.org/0000-0002-1382-2658](https://orcid.org/0000-0002-1382-2658)
