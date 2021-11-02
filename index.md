@@ -29,9 +29,3 @@
 ## Papers
 
 * [orcid.org/0000-0002-1382-2658](https://orcid.org/0000-0002-1382-2658)
-
-## Code
-
-* [Corpus Services](https://github.com/digitalhumanists/corpus-services)
-
-* [LAMA](https://github.com/digitalhumanists/lama)
