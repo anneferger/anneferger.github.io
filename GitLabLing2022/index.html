@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport"
 			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>Geisteswissenschaftliche Daten in Gitlab mit Git LFS</title>
+		<title>Geisteswissenschaftliche Daten in Gitlab</title>
 		<meta name="description" content="Presentation">
 		<meta name="author" content="Anne Ferger">
 		<link rel="stylesheet" href="../reveal/dist/reset.css">
@@ -18,7 +18,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-background-color="#1e888aff">
-					<h3>Organisation der Arbeit mit gesprächswissenschaftlichen Daten in Gitlab</h3>
+					<h3>Organisation der Arbeit mit Transkriptionsdaten in Gitlab</h3>
 					<br />
 					<br />
 					<p>
@@ -30,229 +30,196 @@
 					</p>
 				</section>
 				<section data-background-color="#1e888aff">
-					<section>
-						<h4>Möglichkeiten der Versionskontrolle mit git und GitLab (ursprünglich für die Softwareentwicklung entwickelt)</h4>
+						<h4>Möglichkeiten der Versionskontrolle mit git und GitLab</h4>
 						<ul>
 							<li>Organisation der kollaborativen Arbeit an Daten</li>
-							<li>Verbesserung der Nachhaltigkeit der Daten: Reproduzierbarkeit von Experimenten</li>
-							<li>Methoden der Qualitätssicherung als GitLab CI - https://git.uni-paderborn.de/aferger/dolgan</li>
+							<li>Versionierung der Daten</li>
+							<li><a href="https://git.uni-paderborn.de/aferger/elan-git-example">Beispiel GitLab Projekt</a></li>
 						</ul>
-						<p>
-							</p>
-						<p>Im Projekt <a href="https://www.slm.uni-hamburg.de/inel.html">INEL</a>
-							wurden die <b>Versionierung mit git</b> und ein <b>Framework zur
-								Qualitätssicherung</b> mithilfe von GitLab in existierende Workflows
-							zur Datenerstellung integriert. </p>
-							
-					</section>
+						<br />
+						<br />
+						<br />	
+						<p>Git und GitLab können die Arbeit an Forschungsdaten vereinfachen und
+							nachhaltiger machen</p>										
 				</section>
 				<section data-background-color="#1e888aff">
 					<section>
-						<h4>Geisteswissenschaftlichen Daten und GitLab in der Praxis</h4>
+						<h3>Grundlagen Git und GitLab</h3>
+					</section>
+					<section>
+						<h4>Grundlagen Git, GitLab und Git Tools</h4>
 						<ul>
-							<li>Existierende Workflows der Datenerstellung möglichst unverändert
-								lassen</li>
-							<li>Nutzung von Git während der Datenerstellung mit möglichst wenig
-								(Lern-)Aufwand</li>
-							<li>Git LFS für binäre Daten, die sich dafür auch wirklich eignen</li>
-							<li>Methoden der Qualitätssicherung als GitLab CI</li>
+							<li><a href="https://git-scm.com">Git</a>: Versionskontrollsystem (kann per Terminal oder per Software benutzt werden)</li>
+							<li><a href="https://about.gitlab.com/">GitLab</a>: Server für Git (wie GitHub), Zusatzfunktionen wie Issues, Wikis</li>
+							<li><a href=" https://desktop.github.com/">GitHub Desktop</a>: Software, die die Nutzung von Git vereinfacht und visualisiert</li>
+						
 						</ul>
-						<p>GitLab und Git LFS können die Arbeit and Forschungsdaten vereinfachen und
-							nachhaltiger machen</p>
-					</section>
-				</section>
-				<section data-background-color="#1e888aff">
-					<section>
-						<h3>Workflows der Datenerstellung</h3>
 					</section>
 					<section>
-						<h4>Datenerstellung</h4>
+						<h4>Ressourcen zur Nutzung von Git</h4>
 						<ul>
-							<li>linguistische Transkriptionen, Annotationen und und Übersetzungen
-								von Dolgan, Kamas, Evenki und Selkup im Projekt <a
-									href="https://www.slm.uni-hamburg.de/inel.html">INEL</a></li>
-							<li>weiterführende Informationen zum Projekt <ul>
-									<li><a href="https://inel.corpora.uni-hamburg.de/portal/geo/"
-											>Karte</a> der Erhebungsorte</li>
-									<li><a href="https://www.slm.uni-hamburg.de/inel/kontakt.html"
-											>Kontakt</a></li>
+							<li><a href="https://git-scm.com/book/de/v2">Pro Git book</a> digital kostenfrei verfügbar</li>
+							<li><a href="https://education.github.com/git-cheat-sheet-education.pdf">GitHub Git Cheat Sheet</a></li>
+						</ul>
+					</section>
+					<section>
+						<h4>Git ist ein "distribuiertes Versionskontrollsystem"</h4>
+						<ul>
+							<li>eine Version unserer Transkription liegt auf GitLab</li>
+							<li>wenn die Transkription bearbeitet werden soll, wird eine lokale Kopie (auf dem Computer) angelegt ("git clone")</li>
+							<li>wenn die Transkription fertig bearbeitet wurde, wird sie gespeichert ("git commit") und diese Version nach GitLab zurückgespielt ("git push")</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Git ist ein "distribuiertes Versionskontrollsystem"</h4>
+						<ul>
+							<li>am nächsten Tag soll die Transkription wieder bearbeitet werden, zwischendurch hat eine Kollegin die Datei bearbeitet und wieder nach GitLab zurückgespielt, jetzt müssen die lokalen Dateien auf dem Computer aktualisiert werden ("git pull")</li>
+							<li>danach können wieder die vorherigen Schritte zum Bearbeiten, Speichern und Zurückspielen durchgeführt werden</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Arbeiten mit existierenden Projekten</h4>
+						<ul>
+							<li>ein Projekt muss einmalig auf den Computern, auf denen damit gearbeitet werden soll, angelegt werden</li>
+							<li>Ein GitLab Projekt lokal nutzen:</li>
+							<li>per Terminal:</li>
+							<ul>
+								<li>git clone https://git.uni-paderborn.de/aferger/elan-git-example</li>					
+							</ul>
+							<li>mit GitHub Desktop</li>
+							<ul>
+								<li>File>Clone repository…>URL</li>
+								<li>URL zu GitLab Projekt (URL zu Repository und lokalen Pfad angeben) und gewünschten lokalen Pfad angeben</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h4>Erste Git-Konfiguration</h4>
+						<ul>
+							<li>per Terminal:</li>
+							<ul>
+								<li>git config --global user.name "Your Name Comes Here"</li>
+								<li>git config --global user.email you@yourdomain.example.com</li>
+							</ul>
+							<li>mit GitHub Desktop</li>
+							<ul>
+								<li>File>Options…>Git</li>
+								<li>Name und Email angeben/ändern (gleiche Email wie auch bei der GitLab Anmeldung nutzen)</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h4>Änderungen an Dateien (z.B. Transkriptionen) durchführen</h4>
+						<ul>
+							<li>Sicherstellen dass die lokalen Dateien die neueste Version haben:</li>
+							<ul>
+								<li>git pull</li>
+								<li>mit GitHub Desktop</li>
+								<ul>
+									<li>Button "Fetch origin"</li>
+									<li>Falls es Änderungen auf GitLab gab wird Button zu "Pull origin"</li>
+									<li>Diesen Button auch drücken, dann werden die Dateien im Ordner auf dem Computer aktualisiert</li>
 								</ul>
-							</li>
+							</ul>
 						</ul>
+						<p><small>danach kann wie üblich z.B. mit ELAN an den Dateien gearbeitet werden</small></p>
 					</section>
 					<section>
-						<h4>Datenerstellung</h4>
+						<h4>Änderungen an Dateien (z.B. Transkriptionen) durchführen</h4>
 						<ul>
-							<li>Erstellung linguistischer Korpora teilweise manuell, teilweise
-								automatisch unterstützt (mit den Programmen <a
-									href="https://archive.mpi.nl/tla/elan">ELAN</a>, <a
-									href="https://software.sil.org/fieldworks/">FLEx</a> und <a
-									href="https://exmaralda.org/en/">EXMARaLDA</a>)</li>
-							<li>Daten bestehen aus Transkriptionsdateien (xml) mit Annotationen und
-								Übersetzungen, Metadaten (xml) und Audiodateien oder Manuskripten
-								(binäre Dateien)</li>
-							<li>Git und GitLab zur Versionskontrolle und kollaborativem
-								Arbeiten</li>
-						</ul>
-					</section>
-				</section>
-				<section data-background-color="#1e888aff">
-					<section>
-						<h3>Nutzung von GitLab und Git LFS</h3>
-					</section>
-					<section>
-						<h3>Hürden</h3>
-						<ul>
-							<li>steile Lernkurve bei der Nutzung von Git</li>
-							<li>Unterbrechung der existierenden Workflows</li>
-							<li>große binäre Dateien (Audio und Manuskripte), die aufgrund der
-								verwendeten Software an bestimmten lokalen Pfaden liegen müssen</li>
-						</ul>
-					</section>
-					<section>
-						<h3>Überwindung der Hürden</h3>
-						<ul>
-							<li>Nutzung eines vereinfachten Gitskripts (statt z.B. GitGUI): <a
-									href="https://github.com/digitalhumanists/lama">Lama</a></li>
-							<li>Integration von Qualitätskontrolle in Gitworkflow</li>
-							<li>Erstmaliges Setup von Git und Gitskript (inklusive GitLFS) ist nur
-								einmalig nötig</li>
-						</ul>
-					</section>
-					<section>
-						<h3>Git LFS</h3>
-						<!-- TODO -->
-						<ul>
-							<li>
-								<a href="https://git-lfs.github.com/">Git Large File Storage</a>
-							</li>
-							<li>Welche Daten können gut mit Git LFS versioniert werden?</li>
+							<li>Nach Fertigstellen der Arbeiten die Änderungen speichern und nach GitLab zurückspielen</li>
 							<ul>
-								<li>Die binären Daten (z.B. PDF, WAV, MP3) werden zu Beginn erhoben
-									und eventuell verändert, bleiben aber danach konstant</li>
-								<li>Es ist schon zu Beginn des Projekts relativ klar, welche binären
-									Dateien hinzugefügt werden und welche Dateiendungen sie haben
-									(.gitattributes)</li>
+								<li>git add Filename</li>
+								<li>git commit -m "changed annotation"</li>
+								<li>git push</li>
+								<li>mit GitHub Desktop</li>
+								<ul>
+									<li>Änderungen im Ordner werden automatisch erkannt</li>
+									<li>Feld für Message ausfüllen</li>
+									<li>Button "Commit to main" klicken</li>
+									<li>Button "Push origin" klicken</li>
+								</ul>
 							</ul>
 						</ul>
 					</section>
 					<section>
-						<h3>Git LFS</h3>
-						<!-- TODO -->
+						<h4>Git History</h4>
 						<ul>
-							<li>Welche Daten können gut mit Git LFS versioniert werden?</li>
+							<li><a href="https://git.uni-paderborn.de/aferger/elan-git-example/-/commits/main/">Beispiel</a></li>
+							<li>Alle Versionen aller Dateien sind sichtbar, inklusive der Änderungen die vorgenommen wurden</li>
+							<li>außderdem ist der Autor der Änderungen und eine Nachricht zu den Änderungen sichtbar</li>
+							<li>es könnten alle Zustände der Dateien wieder zurückgeholt werden (bei fehlerhaften Änderungen oder Ähnlichem)</li>
+						</ul>
+					</section>
+					<section>
+						<h4>GitLab Projekt anlegen</h4>
+						<ul>
+							<li>Nach Einloggen:</li>
 							<ul>
-								<li>Es werden regelmäßig neue Daten hinzugefügt, die dann wieder
-									lange nicht verändert werden</li>
-								<li>Die Daten müssen zwingend an einem bestimmten Ort auf dem
-									lokalen Rechner liegen, damit z.B. verwendete
-									Transkriptionssoftware funktioniert</li>
+								<li>Blauer Button "New Project"</li>
+								<li>"Create blank project"</li>
+								<li>Name, gewünschte URL etc. anlegen</li>
 							</ul>
+
 						</ul>
 					</section>
 					<section>
-						<h3>Git LFS</h3>
-						<!-- TODO -->
+						<h4>GitLab Projekt</h4>
 						<ul>
-							<li>Nutzung von GitLFS in GitLab</li>
-							<li>Zu Beginn des Projekts war an der Universität Hamburg noch kein
-								GitLab verfügbar, deshalb wurden nach dem Wechsel die Vorteile von
-								GitLFS und GitLab für die geisteswissenschaftlichen Daten
-								sichtbar</li>
-							<li>Das Hosten der Daten auf GitLab und mit Git LFS bietet Vorteile bei
-								der Publikation der Daten und ist nachhaltiger als die bisherige
-								Lösung</li>
+							<li>dieses Projekt kann wie oben beschrieben als existierendes Projekt genutzt werden ("git clone")</li>
+							<li>existierende Transkriptionen oder andere Dateien können lokal in den durch git Ordner eingefügt werden und (analog zu Änderungen mit Daten) mit GitHubDesktop wie oben beschrieben zu GitLab hinzugefügt werden</li>
 						</ul>
 					</section>
-				<!--	<section>
-						<h3>Übersicht</h3>
-						<img data-src="images/CuboCurationflows.png" height="441" width="713" />
-					</section> -->
-				</section>
-				<section data-background-color="#1e888aff">
 					<section>
-						<h3>(Kontinuierliche) Qualitätskontrolle</h3>
-					</section>
-					<section>
-						<h4>Datenqualität bei (teilweise) manuell erstellten Daten</h4>
+						<h4>Absprache bei der Arbeit an Dateien</h4>
 						<ul>
-							<li>wissenschaftlich robust für statistische Auswertungen, Suchen
-								etc.</li>
-							<li>manuelle Bearbeitung führt zu technischen Inkonsistenzen</li>
-							<li>Transkriptionen, Übersetzungen, Annotationen and Metadaten beziehen
-								sich aufeinander und können so automatisch gecheckt werden</li>
+							<li>auch wenn es bei Git grundsätzlich möglich ist, gleichzeitig an Dateien zu arbeiten ist es bei komplexen Dateien wie Transkriptionen häufig trotzdem sinnvoll die Arbeit zeitlich aufzuteilen</li>
+							<li>Merge Konflikte (dazu weiter unten mehr) können so verhindert werden</li>
+							<li>die Arbeit kann in GitLab durch Issues für einzelne Dateien oder auch Tabellen im Wiki organisiert werden</li>
 						</ul>
-						<p>➔ Checks und Fixes für Inkonsistenzen</p>
 					</section>
 					<section>
-						<h3>Integration in existierende Workflows</h3>
+						<h4>GitLab Issues</h4>
 						<ul>
-							<li>Checks und Fixes wurden zu open source framework <a
-									href="https://doi.org/10.5281/zenodo.4725655">corpus
-									services</a> hinzugefügt </li>
-							<li>Checks (und Fixes) wurden als CI Skript in GitLab hinzugefügt: <a
-									href="https://git.uni-paderborn.de/aferger/dolgan">Beispiel
-									Dolgan</a>
-							</li>
-							<li>vergleiche <a href="https://conquaire.uni-bielefeld.de/">Conquaire
-									Projekt</a> (Hermann et al. 2021)</li>
+							<li>es können Issues für bestimmte Aufgaben, zum Beispiel Annotationen angelegt werden <a href="https://git.uni-paderborn.de/aferger/elan-git-example/-/issues">Beispiel</a></li>
+							<li>durch "refs #1" in der Nachricht zum commit können diese Issues mit den entsprechenden Änderungen verlinkt werden</a></li>
+						</ul>
+					</section>
+					<section>
+						<h4>Was tun bei Merge-Konflikten?</h4>
+						<ul>
+							
+							<li>Keine Panik!</li>
+							<li>Mergekonflikte können entstehen wenn gleichzeitig an der gleichen Stelle einer Datei gearbeitet wurde</li>
+							<li>Bei Merge Konflikten entsteht eine Konfliktdatei, wenn es eine ELAN-Datei ist kann sie vorerst nicht mit ELAN geöffnet werden</li>
+							<li>Vorgehen: Konfliktdatei in einem Texteditor öffnen
+								Konfliktmarker entfernen und nur gewünschte Version behalten</li>							
+						</ul>
+						<p><small>Alternative für grafische Darstellung der Konflikte: <a href="https://meldmerge.org/">Meld (nur für Windows)</a>, <a href="http://kdiff3.sourceforge.net/">KDiff3</a></small></p>
+					</section>
+						<section>
+						<h4>Branches für besondere Änderungen</h4>
+						<ul>
+							<li>Änderungen separat und können später zusammengefügt werden</li>
+							<li>"new branch"</li>
 						</ul>
 					</section>
 				</section>
 				<section data-background-color="#1e888aff">
 					<section>
-						<h3>Weitere Informationen und Tools:</h3>
+						<h3>Weiterführende Möglichkeiten von Git und GitLab</h3>
+					</section>
+					<section>
+						<h4>Möglichkeiten</h4>
 						<ul>
-							<li>Vereinfachte git Lösung: <a
-									href="https://github.com/digitalhumanists/lama">Lama</a></li>
-							<li>Qualitätschecks und automatische Fixes für linguistische Korpora: <a
-									href="https://github.com/digitalhumanists/corpus-services"
-									>corpus services</a></li>
-							<li>Automatic git solution for corpus services: <a
-									href="https://github.com/digitalhumanists/corpus-services/tree/develop/cubo"
-									>cubo</a></li>
+							<li>Verbesserung der Nachhaltigkeit der Daten: Reproduzierbarkeit von Experimenten, Beispiel aus <a href="https://gitlab.ub.uni-bielefeld.de/conquaire/psycholinguistics/-/tree/master/
+								">CONQUAIRE</a></li>
+							<li>Methoden der Qualitätssicherung als GitLab CI</li>
+							<li>Git LFS für binäre Daten, die sich dafür auch wirklich eignen</li>
+							<li>Umgang mit XML-Dateien bei git merges</li>
+							<li>.gitignore Datei</li>
 						</ul>
 					</section>
-				</section>
-				<section data-background-color="#1e888aff">
-					<h3>Korpus Daten</h3>
-					<small>
-						<p>Brykina, Maria; Orlova, Svetlana; Wagner-Nagy, Beáta. 2020. INEL Selkup
-							Corpus. Version 1.0. Publication date 2020-06-30. Archived in Hamburger
-							Zentrum für Sprachkorpora. <a
-								href="http://hdl.handle.net/11022/0000-0007-E1D5-A"
-								>http://hdl.handle.net/11022/0000-0007-E1D5-A</a>. In: Wagner-Nagy,
-							Beáta; Arkhipov, Alexandre; Ferger, Anne; Jettka, Daniel; Lehmberg, Timm
-							(eds.). The INEL corpora of indigenous Northern Eurasian languages. </p>
-						<p>Däbritz, Chris Lasse; Kudryakova, Nina; Stapert, Eugénie. 2019. "INEL
-							Dolgan Corpus." Version 1.0. Publication date 2019-08-31. <a
-								href="http://hdl.handle.net/11022/0000-0007-CAE7-1"
-								>http://hdl.handle.net/11022/0000-0007-CAE7-1</a>. Archived in
-							Hamburger Zentrum für Sprachkorpora. In: Wagner-Nagy, Beáta; Arkhipov,
-							Alexandre; Ferger, Anne; Jettka, Daniel; Lehmberg, Timm (eds.). The INEL
-							corpora of indigenous Northern Eurasian languages. </p>
-						<p>Gusev, Valentin; Klooster, Tiina; Wagner-Nagy, Beáta. 2019. "INEL Kamas
-							Corpus." Version 1.0. Publication date 2019-12-15. <a
-								href="http://hdl.handle.net/11022/0000-0007-DA6E-9"
-								>http://hdl.handle.net/11022/0000-0007-DA6E-9</a>. Archived in
-							Hamburger Zentrum für Sprachkorpora. In: Wagner-Nagy, Beáta; Arkhipov,
-							Alexandre; Ferger, Anne; Jettka, Daniel; Lehmberg, Timm (eds.). The INEL
-							corpora of indigenous Northern Eurasian languages. </p>
-						<p>Also on <a
-								href="https://gitlab.rrz.uni-hamburg.de/inel-open-access/corpora"
-								>GitLab</a></p>
-					</small>
-				</section>
-				<section data-background-color="#1e888aff">
-					<h3>Quellen</h3>
-					<small>
-						<p>Hermann, Fabian / Pietsch, Christian / Cimiano, Philipp (2021):
-							“Conquaire Infrastructure for Continuous Quality Control”, in: Cimiano,
-							Philipp / Pietsch, Christian / Wiljes, Cord (Eds) Studies in Analytical
-							Reproducibility: the Conquaire Project. Bielefeld 17-27. DOI:
-							<a href="10.4119/unibi/2942780">https://doi.org/10.4119/unibi/2942780</a>/p>
-						<p></p>
-					</small>
 				</section>
 				<!-- Contact -->
 				<section data-background-color="#1e888aff">
