@@ -26,6 +26,10 @@
 
 * [FDM mit GitLab 2021](https://www.fdm.nrw/index.php/nrw-ag-gitlab/): "Geisteswissenschaftliche Daten in Gitlab mit Git LFS" [Slides](https://anneferger.github.io/GitLab2021/)
 
+## Additional Slides
+
+* "Organisation der Arbeit mit Transkriptionsdaten in Gitlab" [Slides](https://anneferger.github.io/GitLabLing2022)
+
 ## Papers
 
 * [orcid.org/0000-0002-1382-2658](https://orcid.org/0000-0002-1382-2658)
