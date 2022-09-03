@@ -26,6 +26,12 @@
 
 * [FDM mit GitLab 2021](https://www.fdm.nrw/index.php/nrw-ag-gitlab/): "Geisteswissenschaftliche Daten in Gitlab mit Git LFS" [Slides](https://anneferger.github.io/GitLab2021/)
 
+## Workshops
+
+* [Edirom Summer School 2021](https://ess.uni-paderborn.de/2021/programm.html): "Einführung in die Versionsverwaltung mit Git"
+
+* [Edirom Summer School 2022](https://ess.uni-paderborn.de/2022/programm.html): "Versionsverwaltung mit Git für Geisteswissenschaftler*innen"
+
 ## Additional Slides
 
 * "Organisation der Arbeit mit Transkriptionsdaten in Gitlab" [Slides](https://anneferger.github.io/GitLabLing2022)
