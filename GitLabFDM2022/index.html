@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>GitLab und Transkripte im Projekt MuMoCorp</title>
+	<meta name="description" content="Presentation">
+	<meta name="author" content="Anne Ferger">
+	<link rel="stylesheet" href="../reveal/dist/reset.css">
+	<link rel="stylesheet" href="../reveal/dist/reveal.css">
+	<link rel="stylesheet" href="../reveal/dist/theme/night.css">
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="../plugin/highlight/monokai.css">
+	<!-- Printing and PDF exports -->
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-background-color="#1e888aff">
+				<h3>GitLab und Transkripte im Projekt MuMoCorp</h3>
+				<br />
+				<br />
+				<p>
+					<small>Anne Ferger</small>
+					<br />
+					<small>Universität Paderborn | Universität Duisburg-Essen</small>
+				</p>
+				<p>
+					<small>Slides: <a
+							href="https://anneferger.github.io/GitLabLing2022/">anneferger.github.io/GitLabFDM2022</a></small>
+				</p>
+			</section>
+			<section data-background-color="#1e888aff">
+				<section>
+					<h3><a href="https://www.uni-due.de/kowi/mukom/mumocorp">MuMoCorp</a></h3>
+				</section>
+				<section>
+				<h4>Projekt <a href="https://www.uni-due.de/kowi/mukom/mumocorp">MuMoCorp</a></h4>
+				<ul>
+					<li><b>Data Reuse</b> von multimodalen und multisensoriellen Corpora</li>
+					<li>vorhandene Daten</li>
+					<ul>
+						<li>mehrperspektivische Videodaten</li>
+						<li>XML-basierte Transkriptionen mit Annotationen</li>
+						<li>Roboter Logfiles</li>
+						<li>Motion Capture Daten</li>
+						<li>Metadaten</li>
+					</ul>			
+				</ul>
+				</section>
+				<section>
+					<h4>Datenerstellung</a></h4>
+					<ul>
+						<li>Transkription und Annotation von Videoaufnahmen mit <a href="https://archive.mpi.nl/tla/elan">ELAN</a> Annotationssoftware</li>
+						<li>textbasierte Logfiles von sprachgesteuertem Roboter</li>
+						<li>Videoaufnahmen</li>					
+						<li>Motion Capture Daten</li>								
+					</ul>
+					</section>
+					<section data-background-color="#1e888aff">
+						<h4>Versionskontrolle mit git und GitLab</h4>
+						<ul>
+							<li>Organisation der kollaborativen Arbeit an Daten</li>
+							<li>Versionskontrolle der text-basierten Daten</li>
+							<li>Qualitätskontrolle der Daten durch GitLab CI</li>
+							<li><a href="https://git.uni-due.de/adk471e/elan-git-example">Beispiel GitLab Projekt</a></li>
+						</ul>
+					</section>
+			</section>
+			<section data-background-color="#1e888aff">
+				<section>
+					<h3>Git und GitLab: Setup mit großen binären Dateien</h3>
+				</section>
+				<section>
+					<h4>Textbasierte Dateien</h4>
+					<ul>
+						<li>XML-basierte Transkription von Videoaufnahmen mit <a href="https://archive.mpi.nl/tla/elan">ELAN</a> Annotationssoftware</li>
+						<li>Roboter Logfiles</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Binäre Dateien</h4>
+					<ul>
+						<li>Videoaufnahmen</li>					
+						<li>Motion Capture Daten</li>						
+					</ul>
+				</section>
+				<section>
+					<h4>Arbeit auf Netzlaufwerk mit Videodateien</h4>
+					<ul>
+						<li>sehr große Dateigröße</li>					
+						<li>Dateipfade müssen zur Bearbeitung korrekt sein</li>			
+						<li>Datenschutz bei Videodaten</li>					
+					</ul>
+				</section>
+				<section>
+					<h4>Das bedeutet für das Git-Setup</h4>
+					<ul>
+						<li>bei Videos nur Backup außerhalb von git, keine Versionskontrolle</li>					
+						<li>Versionskontrolle der text-basierten Dateien direkt auf Netzlaufwerk</li>			
+						<li>Nutzung von git sehr niedrigschwellig und halbautomatisiert</li>					
+					</ul>
+				</section>
+			</section>
+			<section data-background-color="#1e888aff">
+				<section>
+					<h3>Qualitätssicherung mit GitLab CI</h3>
+				</section>
+				<section>
+					<h4>Nutzung eines vorhandenen Tools in GitLab CI</h4>
+					<ul>
+						<li>Verbesserung der Nachhaltigkeit der Daten: Reproduzierbarkeit von Experimenten, Beispiel aus
+							<a href="https://gitlab.ub.uni-bielefeld.de/conquaire/psycholinguistics/-/tree/master/
+								">CONQUAIRE</a></li>
+						<li>GitLab CI mit HTML liste als Output, dadurch Kombination unterschiedlicher Check-Technologie (z.B. Java, Python) möglich</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Nutzung eines vorhandenen Tools in GitLab CI</h4>
+					<ul>
+						<li>nur automatischer Check der text-basierten Daten möglich</li>
+					</ul>
+				</section>
+			</section>
+			<section data-background-color="#1e888aff">
+				<section>
+					<h4>Ausblick im <a href="https://www.uni-due.de/kowi/mukom/mumocorp">MuMoCorp</a> Projekt</h4>
+					<ul>
+						<li>Veröffentlichung von Checkliste mit best practices für Datenaufbereitung von linguistischen multimodalen Daten</li>
+						<li>Beispiel von <a href="https://git.uni-due.de/adk471e/elan-git-example">CI .yml Datei zur Weiternutzung</a></li>
+					</ul>
+				</section>			
+			</section>
+			<!-- Contact -->
+			<section data-background-color="#1e888aff">
+				<section>
+					<h3>Contact</h3>
+					<p><a href="https://www.uni-due.de/kowi/mukom/mumocorp">MuMoCorp</a></p>
+					<p><a href="https://anneferger.github.io/">Anne Ferger</a></p>
+					<p><a href="mailto:anne.ferger@uni-due.de">anne.ferger@uni-due.de</a></p>
+				</section>
+			</section>
+		</div>
+	</div>
+	<script src="../reveal/dist/reveal.js"></script>
+	<script src="../reveal/plugin/notes/notes.js"></script>
+	<script src="../reveal/plugin/markdown/markdown.js"></script>
+	<script src="../reveal/plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});</script>
+</body>
+
+</html>
