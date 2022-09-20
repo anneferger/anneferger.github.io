@@ -39,7 +39,7 @@
 				<section>
 				<h4>Projekt <a href="https://www.uni-due.de/kowi/mukom/mumocorp">MuMoCorp</a></h4>
 				<ul>
-					<li><b>Data Reuse</b> von multimodalen und multisensoriellen Corpora</li>
+					<li><b>Data Reuse</b> von <b>mu</b>lti<b>mo</b>dalen und multisensoriellen <b>Corp</b>ora</li>
 					<li>vorhandene Daten</li>
 					<ul>
 						<li>mehrperspektivische Videodaten</li>
@@ -52,6 +52,7 @@
 				</section>
 				<section>
 					<h4>Datenerstellung</a></h4>
+					<p>geisteswissenschaftliche Daten werden oft teilweise manuell erstellt, starke Verbreitung von XML-basierten Formaten</p>
 					<ul>
 						<li>Transkription und Annotation von Videoaufnahmen mit <a href="https://archive.mpi.nl/tla/elan">ELAN</a> Annotationssoftware</li>
 						<li>textbasierte Logfiles von sprachgesteuertem Roboter</li>
@@ -99,8 +100,8 @@
 					<h4>Das bedeutet für das Git-Setup</h4>
 					<ul>
 						<li>bei Videos nur Backup außerhalb von git, keine Versionskontrolle</li>					
-						<li>Versionskontrolle der text-basierten Dateien direkt auf Netzlaufwerk</li>			
-						<li>Nutzung von git sehr niedrigschwellig und halbautomatisiert</li>					
+						<li>Versionskontrolle der text-basierten Dateien direkt auf gemeinsam genutzten Netzlaufwerk</li>			
+						<li>Nutzung von git niedrigschwellig und halbautomatisiert</li>					
 					</ul>
 				</section>
 			</section>
@@ -114,11 +115,13 @@
 						<li>Verbesserung der Nachhaltigkeit der Daten: Reproduzierbarkeit von Experimenten, Beispiel aus
 							<a href="https://gitlab.ub.uni-bielefeld.de/conquaire/psycholinguistics/-/tree/master/
 								">CONQUAIRE</a></li>
-						<li>GitLab CI mit HTML liste als Output, dadurch Kombination unterschiedlicher Check-Technologie (z.B. Java, Python) möglich</li>
+						<li>Nachnutzung des Tools <a href="https://gitlab.rrz.uni-hamburg.de/corpus-services/corpus-services">Corpus Services</a></li>
+						<li>GitLab CI mit HTML liste als Artifact (Vorteil Darstellung html Artifakte)</li>
+						<li>Durch GitLab Kombination unterschiedlicher Check-Technologien (z.B. Java und Python) möglich</li>
 					</ul>
 				</section>
 				<section>
-					<h4>Nutzung eines vorhandenen Tools in GitLab CI</h4>
+					<h4>Einschränkungen</h4>
 					<ul>
 						<li>nur automatischer Check der text-basierten Daten möglich</li>
 					</ul>
@@ -129,7 +132,10 @@
 					<h4>Ausblick im <a href="https://www.uni-due.de/kowi/mukom/mumocorp">MuMoCorp</a> Projekt</h4>
 					<ul>
 						<li>Veröffentlichung von Checkliste mit best practices für Datenaufbereitung von linguistischen multimodalen Daten</li>
-						<li>Beispiel von <a href="https://git.uni-due.de/adk471e/elan-git-example">CI .yml Datei zur Weiternutzung</a></li>
+						<li>Weiterentwicklung des Beispiels von <a href="https://git.uni-due.de/adk471e/elan-git-example">CI .yml Datei zur Weiternutzung</a></li>
+						<li>Hinzufügen weiterer Qulitätschecks, z.B. XML-Validierung</li>
+						<li>Hinzufügen automatischer Visualisierungsworkflows</li>
+						<li>Nutzung von Präsentationen in GitLab/GitHub zur Erweiterung der Dokumentation</li>
 					</ul>
 				</section>			
 			</section>
