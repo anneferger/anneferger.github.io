@@ -10,6 +10,8 @@
 
 * [FORGE 2021](https://forge2021.uni-koeln.de/): "Fun with VCS - more with less: A Tool for Facilitating the Use of Git in Linguistic Research Data Management" [Abstract](https://doi.org/10.5281/zenodo.5379579) and [Poster](https://doi.org/10.5281/zenodo.5336613)
 
+* [TEI2022 Conference](https://conferences.ncl.ac.uk/tei2022/): "From OxGarage to TEIGarage and MEIGarage" [Abstract & Poster](https://doi.org/10.5281/zenodo.7061524)
+
 ## Presentations
 
 * [DH_Budapest_2018](https://elte-dh.hu/en/program/): "Categorization of Language Documentation Data – A Graph-based Approach" [Abstract](https://elte-dh.hu/wp-content/uploads/2018/05/paper-abstract.pdf#page=20)
@@ -25,6 +27,8 @@
 * [CLARIN 2021](https://www.clarin.eu/event/2021/clarin-annual-conference-2021-virtual-event): "Seamless Integration of Continuous Quality Control and Research Data Management for Indigenous Language Resources" [Abstract](https://office.clarin.eu/v/CE-2021-1923-CLARIN2021_ConferenceProceedings.pdf) and [Slides](https://digitalhumanists.github.io/CLARIN2021)
 
 * [FDM mit GitLab 2021](https://www.fdm.nrw/index.php/nrw-ag-gitlab/): "Geisteswissenschaftliche Daten in Gitlab mit Git LFS" [Slides](https://anneferger.github.io/GitLab2021/)
+
+* [FDM mit git und GitLab: Community-Workshop](https://www.fdm.nrw/index.php/fdm-mit-git-und-gitlab-community-workshop/): "GitLab und Transkripte im Projekt MuMoCorp" [Slides](https://anneferger.github.io/GitLabFDM2022/)
 
 ## Workshops
 
