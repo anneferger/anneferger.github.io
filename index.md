@@ -28,7 +28,7 @@
 
 * [FDM mit GitLab 2021](https://www.fdm.nrw/index.php/nrw-ag-gitlab/): "Geisteswissenschaftliche Daten in Gitlab mit Git LFS" [Slides](https://anneferger.github.io/GitLab2021/)
 
-* [FDM mit git und GitLab: Community-Workshop](https://www.fdm.nrw/index.php/fdm-mit-git-und-gitlab-community-workshop/): "GitLab und Transkripte im Projekt MuMoCorp" [Slides](https://anneferger.github.io/GitLabFDM2022/)
+* [FDM mit git und GitLab 2022](https://www.fdm.nrw/index.php/fdm-mit-git-und-gitlab-community-workshop/): "GitLab und Transkripte im Projekt MuMoCorp" [Slides](https://anneferger.github.io/GitLabFDM2022/)
 
 ## Workshops
 
