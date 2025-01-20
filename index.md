@@ -3,6 +3,8 @@
 
 ## Presentations
 
+- [TEIMEC 2023](https://teimec2023.uni-paderborn.de/)Peter Stadler, Anne Ferger: "Building sustainable infrastructure for scholarly communities" [Abstract](https://teimec2023.uni-paderborn.de/contributions/105.html)
+
 - [CMC2023](https://www.uni-mannheim.de/cmc-corpora2023/programme/) Anne Ferger, Andre Frank Krause and Karola Pitsch: "Workflows and Methods for Creating Structured Corpora of Multimodal Human-Robot-Interaction" [Abstract](https://doi.org/10.14618/1z5k-pb25)
 
 - [FDM mit git und GitLab 2022](https://www.fdm.nrw/index.php/fdm-mit-git-und-gitlab-community-workshop/): "GitLab und Transkripte im Projekt MuMoCorp" [Slides](https://anneferger.github.io/GitLabFDM2022/)
@@ -38,9 +40,12 @@
 
 ## Workshops
 
-- [Edirom Summer School 2021](https://ess.uni-paderborn.de/2021/programm.html): "Einführung in die Versionsverwaltung mit Git"
+- [Edirom Summer School 2024](https://ess.uni-paderborn.de/2024/programm.html): "Versionsverwaltung mit Git für Geisteswissenschaftler-innen"
 
 - [Edirom Summer School 2022](https://ess.uni-paderborn.de/2022/programm.html): "Versionsverwaltung mit Git für Geisteswissenschaftler-innen"
+
+- [Edirom Summer School 2021](https://ess.uni-paderborn.de/2021/programm.html): "Einführung in die Versionsverwaltung mit Git"
+
 
 ## Papers
 
