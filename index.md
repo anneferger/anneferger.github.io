@@ -1,5 +1,8 @@
-# Abstracts, posters and slides
+# Publications, presentation slides, posters and workshops
 
+## Publications
+
+- See [orcid.org/0000-0002-1382-2658](https://orcid.org/0000-0002-1382-2658) or [zotero.org/aferger](https://www.zotero.org/aferger)
 
 ## Presentations
 
@@ -47,6 +50,4 @@
 - [Edirom Summer School 2021](https://ess.uni-paderborn.de/2021/programm.html): "Einführung in die Versionsverwaltung mit Git"
 
 
-## Papers
 
-- See [orcid.org/0000-0002-1382-2658](https://orcid.org/0000-0002-1382-2658)
